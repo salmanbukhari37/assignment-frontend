@@ -1,0 +1,13 @@
+.login {
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 20px;
+  top: 120px;
+  left: 30%;
+  background: #eee;
+  width: 500px;
+}
+.login h1 {
+  font-weight: 300;
+}

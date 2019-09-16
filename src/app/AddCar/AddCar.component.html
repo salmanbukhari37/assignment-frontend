@@ -1,0 +1,282 @@
+<div class="container mt-4" *ngIf="!showLoader">
+  <h1 class="text-center">Car Form</h1>
+  <form [formGroup]="addCarForm">
+    <div class="form-group row">
+      <label for="carBrand" class="col-sm-2 col-form-label">Car Brand: </label>
+      <div class="col-sm-10">
+        <select
+          type="text"
+          class="form-control"
+          formControlName="carBrand"
+          placeholder="Name"
+        >
+          <option value="">Select Car</option>
+          <option *ngFor="let brand of carBrandArray" value="{{ brand }}">{{
+            brand
+          }}</option>
+        </select>
+        <div *ngIf="carBrand.touched && carBrand.invalid">
+          <div class="alert alert-danger mt-2" *ngIf="carBrand.errors.required">
+            Car Brand is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="carModel" class="col-sm-2 col-form-label">Car Model: </label>
+      <div class="col-sm-10">
+        <select
+          type="text"
+          class="form-control"
+          formControlName="carModel"
+          placeholder="Name"
+        >
+          <option value="">Select Car Model</option>
+          <option *ngFor="let model of carModelArray" value="{{ model }}">{{
+            model
+          }}</option>
+        </select>
+        <div *ngIf="carModel.touched && carModel.invalid">
+          <div class="alert alert-danger mt-2" *ngIf="carModel.errors.required">
+            Car Model is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="carColor" class="col-sm-2 col-form-label">Color: </label>
+      <div class="col-sm-10">
+        <select type="text" class="form-control" formControlName="carColor">
+          <option value="">Select Car Color</option>
+          <option *ngFor="let color of carColorArray" value="{{ color }}">{{
+            color
+          }}</option>
+        </select>
+        <div *ngIf="carColor.touched && carColor.invalid">
+          <div class="alert alert-danger mt-2" *ngIf="carColor.errors.required">
+            Car Color is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="engineSize" class="col-sm-2 col-form-label"
+        >Engine Size:
+      </label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          class="form-control"
+          formControlName="engineSize"
+          placeholder="Engine Size"
+        />
+        <div *ngIf="engineSize.touched && engineSize.invalid">
+          <div
+            class="alert alert-danger mt-2"
+            *ngIf="engineSize.errors.required"
+          >
+            Car Color is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="productionYear" class="col-sm-2 col-form-label"
+        >Production Year:
+      </label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          class="form-control"
+          formControlName="productionYear"
+          placeholder="Production Year"
+        />
+        <div *ngIf="productionYear.touched && productionYear.invalid">
+          <div
+            class="alert alert-danger mt-2"
+            *ngIf="productionYear.errors.required"
+          >
+            Production Year is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="registrationNumber" class="col-sm-2 col-form-label"
+        >Registration Number:
+      </label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          class="form-control"
+          formControlName="registrationNumber"
+          placeholder="Registration Number"
+        />
+        <div *ngIf="registrationNumber.touched && registrationNumber.invalid">
+          <div
+            class="alert alert-danger mt-2"
+            *ngIf="registrationNumber.errors.required"
+          >
+            Registration Number is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="mileage" class="col-sm-2 col-form-label">Mileage: </label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          class="form-control"
+          formControlName="mileage"
+          placeholder="Mileage"
+        />
+        <div *ngIf="mileage.touched && mileage.invalid">
+          <div class="alert alert-danger mt-2" *ngIf="mileage.errors.required">
+            Mileage is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="fuelType" class="col-sm-2 col-form-label">Fuel Type: </label>
+      <div class="col-sm-10">
+        <select
+          type="text"
+          class="form-control"
+          formControlName="fuelType"
+          placeholder="Name"
+        >
+          <option value="">Select Fuel</option>
+          <option
+            value=""
+            *ngFor="let fuel of carFuelTypeArray"
+            value="{{ fuel }}"
+            >{{ fuel }}</option
+          >
+        </select>
+        <div *ngIf="fuelType.touched && fuelType.invalid">
+          <div class="alert alert-danger mt-2" *ngIf="fuelType.errors.required">
+            Fuel Type is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="bodyType" class="col-sm-2 col-form-label">Body Type: </label>
+      <div class="col-sm-10">
+        <select
+          type="text"
+          class="form-control"
+          formControlName="bodyType"
+          placeholder="Name"
+        >
+          <option value="">Select Body</option>
+          <option
+            value=""
+            *ngFor="let body of carBodyArray"
+            value="{{ body }}"
+            >{{ body }}</option
+          >
+        </select>
+        <div *ngIf="bodyType.touched && bodyType.invalid">
+          <div class="alert alert-danger mt-2" *ngIf="bodyType.errors.required">
+            Body Type is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="roomType" class="col-sm-2 col-form-label"></label>
+      <div class="col-sm-10" *ngIf="addButtonIsActive; else updateCar">
+        <button
+          class="btn btn-primary float-right"
+          (click)="AddCar(addCarForm.value)"
+          [disabled]="!addCarForm.valid"
+        >
+          Add New Car
+        </button>
+      </div>
+      <ng-template #updateCar>
+        <div class="col-sm-10">
+          <button
+            class="btn btn-warning float-right"
+            (click)="UpdateCar(addCarForm.value)"
+            [disabled]="!addCarForm.valid"
+          >
+            Update Car
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </form>
+</div>
+
+<div class="container-fluid" *ngIf="!showLoader">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-underline">List of {{ pageName }}</h2>
+    </div>
+
+    <div class="col-12 table-responsive-sm table-responsive-lg">
+      <table class="table  table-hover">
+        <thead>
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Car Brand</th>
+            <th scope="col">Car Model</th>
+            <th scope="col">Color</th>
+            <th scope="col">Engine Size</th>
+            <th scope="col">Production Year</th>
+            <th scope="col">Registration Number</th>
+            <th scope="col">Fuel Type</th>
+            <th scope="col">Mileage</th>
+            <th scope="col">Body Type</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <p class="error" *ngIf="cars == 0; else reserverTable">
+            <strong>No records found</strong>
+          </p>
+          <ng-template #reserverTable>
+            <tr *ngFor="let car of cars; index as i">
+              <th scope="row">{{ car._id }}</th>
+              <td>{{ car.CarBrand }}</td>
+              <td>{{ car.CarModel }}</td>
+              <td>{{ car.Color }}</td>
+              <td>
+                {{ car.EngineSize }}
+              </td>
+              <td>
+                {{ car.ProductionYear }}
+              </td>
+              <td>{{ car.RegistrationNumber }}</td>
+              <td>{{ car.FuelType }}</td>
+              <td>{{ car.Mileage }}</td>
+              <td>{{ car.BodyType }}</td>
+              <td>
+                <button
+                  class="btn btn-danger ml-4"
+                  (click)="DeleteCar(i, car._id)"
+                >
+                  Delete
+                </button>
+                <button
+                  class="btn btn-success ml-4"
+                  (click)="EditCar(i, car._id)"
+                >
+                  Update
+                </button>
+              </td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
